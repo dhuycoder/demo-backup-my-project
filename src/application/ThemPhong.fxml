@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1205.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddRoomController">
+   <children>
+      <AnchorPane fx:id="AnchorPane2" layoutX="242.0" layoutY="-1.0" prefHeight="710.0" prefWidth="963.0" stylesheets="@HomeDesigner.css">
+         <children>
+            <TableView fx:id="table" layoutX="370.0" layoutY="229.0" prefHeight="458.0" prefWidth="562.0" styleClass="shadow" stylesheets="@HomeDesigner.css" visible="false">
+              <columns>
+                <TableColumn fx:id="roomNumberColumn" prefWidth="75.0" text="Mã phòng " />
+                  <TableColumn fx:id="buidingNumberColumn" minWidth="0.0" prefWidth="97.5999755859375" text="Mã Tòa " />
+                <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="152.800048828125" text="Giá tiền " />
+                  <TableColumn fx:id="roomTypeColumn" minWidth="0.0" prefWidth="143.2000732421875" text="Loại phòng" />
+                  <TableColumn fx:id="roomStateColumn" minWidth="0.0" prefWidth="88.800048828125" text="Trạng Thái" />
+              </columns>
+            </TableView>
+            <Label fx:id="roomNumberLabel" layoutX="68.0" layoutY="246.0" text="Mã phòng:" visible="false" />
+            <Label fx:id="priceLabel" layoutX="68.0" layoutY="336.0" text="Giá tiền:" visible="false" />
+            <TextField fx:id="roomNumberTextField" layoutX="138.0" layoutY="242.0" visible="false" />
+            <TextField fx:id="priceTextField" layoutX="138.0" layoutY="331.0" visible="false" />
+            <Label fx:id="roomTypeLabel" layoutX="68.0" layoutY="290.0" text="Loại phòng:" visible="false" />
+            <TextField fx:id="roomTypeTextField" layoutX="138.0" layoutY="285.0" visible="false" />
+            <Button fx:id="AddButton" layoutX="42.0" layoutY="443.0" mnemonicParsing="false" onAction="#add" prefHeight="42.0" prefWidth="126.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Thêm phòng" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="DelButton" layoutX="202.0" layoutY="443.0" mnemonicParsing="false" onAction="#delete" prefHeight="42.0" prefWidth="126.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xóa phòng" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="viewButton" layoutX="42.0" layoutY="508.0" mnemonicParsing="false" onAction="#view" prefHeight="42.0" prefWidth="126.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xem phòng" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="updateButton" layoutX="202.0" layoutY="508.0" mnemonicParsing="false" onAction="#update" prefHeight="42.0" prefWidth="126.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Cập nhật" textFill="#ffffffc9" visible="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="370.0" layoutY="14.0" text="QUẢN LÝ CHUNG CƯ MINI" textFill="#38593b">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="buildingNumberLabel" layoutX="68.0" layoutY="389.0" text="Mã Tòa:" visible="false" />
+            <TextField fx:id="buildingNumberTextField" editable="false" layoutX="138.0" layoutY="384.0" visible="false" />
+            <Button fx:id="addCustomerButton" layoutX="799.0" layoutY="176.0" mnemonicParsing="false" onAction="#addCustomer" prefHeight="42.0" prefWidth="135.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Thêm Khách " textFill="WHITE" visible="false" />
+            <Button fx:id="addBuildingButton" layoutX="536.0" layoutY="50.0" mnemonicParsing="false" onAction="#AddBuilding" prefHeight="42.0" prefWidth="135.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Thêm nhà" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="276.0" layoutY="75.0" text="Mã tòa" />
+            <TextField fx:id="buildingNumber1TextField" layoutX="333.0" layoutY="71.0" prefHeight="26.0" prefWidth="184.0" />
+            <Label layoutX="276.0" layoutY="110.0" text="Địa chỉ " />
+            <TextField fx:id="addressBuildingTextField" layoutX="333.0" layoutY="105.0" prefHeight="26.0" prefWidth="184.0" />
+            <ChoiceBox fx:id="buildingNumberChoiceBox" layoutX="81.0" layoutY="140.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="144.0" text="Chọn nhà:" />
+            <Label fx:id="addressBuildingLabel" layoutX="253.0" layoutY="143.0" />
+            <Button fx:id="delBuilding" layoutX="536.0" layoutY="104.0" mnemonicParsing="false" onAction="#delBuilding" prefHeight="42.0" prefWidth="135.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xóa nhà" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TextField fx:id="searchRoomNumberTextField" layoutX="435.0" layoutY="197.0" prefHeight="26.0" prefWidth="141.0" promptText="Nhập mã phòng" visible="false" />
+            <Button fx:id="searchRoomNumberButton" alignment="CENTER" layoutX="370.0" layoutY="197.0" mnemonicParsing="false" onAction="#searchRoomNumber" prefHeight="26.0" prefWidth="67.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Tìm Kiếm" textFill="WHITE" visible="false" />
+            <Button fx:id="viewCustomerButton" layoutX="651.0" layoutY="176.0" mnemonicParsing="false" onAction="#viewCustomer" prefHeight="42.0" prefWidth="135.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xem thông tin khách " textFill="WHITE" visible="false" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="customerAnchorPane" layoutX="241.0" layoutY="-1.0" prefHeight="710.0" prefWidth="963.0" visible="false">
+         <children>
+            <AnchorPane fx:id="customerAnchorPane1" layoutX="28.0" layoutY="35.0" prefHeight="70.0" prefWidth="910.0" stylesheets="@HomeDesigner.css">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <Label layoutX="48.0" layoutY="16.0" text="Thêm khách" textFill="#58b98d">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIconView fill="#58b98d" glyphName="PLUS" layoutX="14.0" layoutY="50.0" size="30" />
+                  <Button alignment="CENTER_RIGHT" layoutX="686.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToRoomHome" prefHeight="42.0" prefWidth="114.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Quay về" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <FontAwesomeIconView fill="WHITE" glyphName="UNDO" layoutX="697.0" layoutY="41.0" size="17" />
+                  <Button fx:id="saveCustomerButton" layoutX="823.0" layoutY="14.0" mnemonicParsing="false" onAction="#save" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Lưu" textFill="WHITE" visible="false">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="saveMemBerButton" layoutX="823.0" layoutY="14.0" mnemonicParsing="false" onAction="#saveMember" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Lưu" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customerAnchorPane2" layoutX="28.0" layoutY="159.0" prefHeight="531.0" prefWidth="910.0" stylesheets="@HomeDesigner.css" visible="false">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <Button fx:id="updateCustomerButton" layoutX="732.0" layoutY="462.0" mnemonicParsing="false" onAction="#updateCustomer" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Sửa thông tin" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="39.0" layoutY="53.0" prefHeight="36.0" prefWidth="86.0" text="Mã khách:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="145.0" text="Họ tên: ">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="232.0" text="Giới tính:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="487.0" layoutY="53.0" text="CMND:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="customerNumberTextField" layoutX="130.0" layoutY="50.0" prefHeight="42.0" prefWidth="326.0" />
+                  <RadioButton fx:id="genderCustomerRadioButton1" layoutX="145.0" layoutY="229.0" mnemonicParsing="false" onAction="#getGender" text="Nam">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <Label layoutX="43.0" layoutY="327.0" text="SDT:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="487.0" layoutY="147.0" text="Ngày sinh:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="489.0" layoutY="234.0" text="Quê quán:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="486.0" layoutY="329.0" text="Ngày thuê:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="genderCustomerRadioButton2" layoutX="256.0" layoutY="229.0" mnemonicParsing="false" onAction="#getGender" text="Nữ" toggleGroup="$gender">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </RadioButton>
+                  <TextField fx:id="customerNameTextField" layoutX="130.0" layoutY="134.0" prefHeight="42.0" prefWidth="326.0" />
+                  <TextField fx:id="customerPhoneNumberTextField" layoutX="130.0" layoutY="315.0" prefHeight="42.0" prefWidth="326.0" />
+                  <TextField fx:id="customerIdCardTextField" layoutX="569.0" layoutY="50.0" prefHeight="42.0" prefWidth="326.0" />
+                  <TextField fx:id="customerHomeTownTextField" layoutX="570.0" layoutY="223.0" prefHeight="42.0" prefWidth="326.0" />
+                  <Button fx:id="delCustomerButton" layoutX="559.0" layoutY="462.0" mnemonicParsing="false" onAction="#delCustomer" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xóa thông tin" textFill="WHITE">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <DatePicker fx:id="customerBirthDayDatePicker" editable="false" layoutX="570.0" layoutY="133.0" onAction="#getCustomerBirthDay" prefHeight="42.0" prefWidth="326.0" />
+                  <DatePicker fx:id="customerArrivalDateDatePicker" editable="false" layoutX="569.0" layoutY="315.0" onAction="#getCustomerArrivalDate" prefHeight="42.0" prefWidth="326.0" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="29.0" layoutY="119.0" mnemonicParsing="false" onAction="#showInfoCustomer" prefHeight="36.0" prefWidth="157.0" style="-fx-background-color: white;" styleClass="shadow" stylesheets="@HomeDesigner.css" text="Thông tin khách thuê">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="197.0" layoutY="119.0" mnemonicParsing="false" onAction="#showInfoMember" prefHeight="36.0" prefWidth="157.0" style="-fx-background-color: white;" styleClass="shadow" stylesheets="@HomeDesigner.css" text="Thành viên">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <AnchorPane fx:id="memberAnchorPane" layoutX="29.0" layoutY="159.0" prefHeight="538.0" prefWidth="910.0" stylesheets="@HomeDesigner.css">
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <Label layoutX="43.0" layoutY="358.0" prefHeight="26.0" prefWidth="57.0" text="Họ tên">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="memberNameTextField" layoutX="134.0" layoutY="355.0" prefHeight="7.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <RadioButton fx:id="genderMemberRadioButton2" layoutX="554.0" layoutY="363.0" mnemonicParsing="false" onAction="#getGenderMember" prefHeight="26.0" prefWidth="60.0" text="Nữ">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gender1" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <DatePicker fx:id="memberBirthDayDatePicker" layoutX="133.0" layoutY="418.0" onAction="#getMemberBirth" prefHeight="0.0" prefWidth="150.0" />
+                  <Label layoutX="392.0" layoutY="492.0" prefHeight="26.0" prefWidth="57.0" text="CMND">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="memberIdCardTextField" layoutX="483.0" layoutY="489.0" prefHeight="0.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Label layoutX="43.0" layoutY="421.0" prefHeight="26.0" prefWidth="78.0" text="Ngày sinh ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="43.0" layoutY="298.0" prefHeight="26.0" prefWidth="57.0" text="STT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="memBerNumberTextField" alignment="CENTER" layoutX="134.0" layoutY="295.0" prefHeight="26.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="392.0" layoutY="298.0" prefHeight="26.0" prefWidth="78.0" text="Quê quán ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="memberAddressTextField" layoutX="483.0" layoutY="295.0" prefHeight="30.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Label layoutX="392.0" layoutY="429.0" prefHeight="26.0" prefWidth="80.0" text="Điện Thoại">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="memberPhoneNumberTextField" layoutX="483.0" layoutY="426.0" prefHeight="0.0" prefWidth="150.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <Label layoutX="392.0" layoutY="366.0" prefHeight="26.0" prefWidth="70.0" text="Giới tính ">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="genderMemberRadioButton1" layoutX="483.0" layoutY="366.0" mnemonicParsing="false" onAction="#getGenderMember" text="Nam" toggleGroup="$gender1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <TableView fx:id="memberTable" layoutX="34.0" layoutY="31.0" prefHeight="230.0" prefWidth="859.0">
+                    <columns>
+                      <TableColumn fx:id="memberNumberColumn" prefWidth="28.79998779296875" text="STT" />
+                      <TableColumn fx:id="memberNameColumn" prefWidth="121.60000610351562" text="Họ Tên " />
+                        <TableColumn fx:id="memberGenderColumn" prefWidth="58.39996337890625" text="Giới tính " />
+                        <TableColumn fx:id="memberBirthDayColumn" prefWidth="126.4000244140625" text="Ngày sinh " />
+                        <TableColumn fx:id="memberHomeTownColumn" prefWidth="157.59991455078125" text="Quê quán " />
+                        <TableColumn fx:id="memberIdCardColumn" prefWidth="182.4000244140625" text="CMND" />
+                        <TableColumn fx:id="memberPhoneNumberColumn" prefWidth="182.39996337890625" text="Điện thoại " />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="720.0" layoutY="392.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xóa thành viên" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="720.0" layoutY="459.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="135.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Sửa thành viên " textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AnchorPane1" layoutY="2.0" prefHeight="709.0" prefWidth="242.0" styleClass="nav-form" stylesheets="@HomeDesigner.css">
+         <children>
+            <Button fx:id="dichVuButton" layoutY="383.0" mnemonicParsing="false" onAction="#showService" prefHeight="82.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Dịch Vụ" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button layoutX="-2.0" layoutY="221.0" mnemonicParsing="false" onAction="#showHome" prefHeight="82.0" prefWidth="175.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="ThemPhongButton" layoutY="302.0" mnemonicParsing="false" onAction="#showAddRoom" prefHeight="82.0" prefWidth="242.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Thêm Phòng" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="14.0" layoutY="273.0" size="30" text="" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" layoutX="15.0" layoutY="354.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PHONE" layoutX="16.0" layoutY="435.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="77.0" layoutY="100.0" size="100" wrappingWidth="78.39996337890625" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="114.0" prefHeight="42.0" prefWidth="242.0" text="Welcome to" textAlignment="CENTER" textFill="#47d9b5" wrapText="true">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="38.0" layoutY="665.0" mnemonicParsing="false" onAction="#logout" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Logout">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="16.0" layoutY="690.0" size="30" />
+            <Label fx:id="usernameTextField" alignment="CENTER" layoutX="-2.0" layoutY="156.0" prefHeight="31.0" prefWidth="242.0" text="Username" textFill="#47d9b5">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="calculateButton" layoutY="465.0" mnemonicParsing="false" onAction="#showCalculate" prefHeight="82.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Tính tiền" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="11.0" layoutY="516.0" size="30" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

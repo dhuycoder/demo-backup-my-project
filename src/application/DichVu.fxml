@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1205.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DichVuController">
+   <children>
+      <AnchorPane fx:id="AnchorPane1" layoutY="2.0" prefHeight="709.0" prefWidth="242.0" styleClass="nav-form" stylesheets="@HomeDesigner.css">
+         <children>
+            <Button fx:id="dichVuButton" layoutY="383.0" mnemonicParsing="false" onAction="#showService" prefHeight="82.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Dịch Vụ" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button layoutX="-2.0" layoutY="221.0" mnemonicParsing="false" onAction="#showHome" prefHeight="82.0" prefWidth="175.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="ThemPhongButton" layoutY="302.0" mnemonicParsing="false" onAction="#showAddRoom" prefHeight="82.0" prefWidth="242.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Thêm Phòng" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="14.0" layoutY="273.0" size="30" text="" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" layoutX="15.0" layoutY="354.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PHONE" layoutX="16.0" layoutY="435.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="77.0" layoutY="100.0" size="100" wrappingWidth="78.39996337890625" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="114.0" prefHeight="42.0" prefWidth="242.0" text="Welcome to" textAlignment="CENTER" textFill="#47d9b5" wrapText="true">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="38.0" layoutY="665.0" mnemonicParsing="false" onAction="#logout" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Logout">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="16.0" layoutY="690.0" size="30" />
+            <Label fx:id="usernameTextField" alignment="CENTER" layoutX="-2.0" layoutY="156.0" prefHeight="31.0" prefWidth="242.0" text="Username" textFill="#47d9b5">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="calculateButton" layoutY="465.0" mnemonicParsing="false" onAction="#showCalculate" prefHeight="82.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Tính tiền" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="11.0" layoutY="516.0" size="30" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="271.0" layoutY="25.0" prefHeight="100.0" prefWidth="905.0" stylesheets="@HomeDesigner.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <Label layoutX="56.0" layoutY="32.0" text="Danh sách dịch vụ " textFill="#58b98d">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER_RIGHT" layoutX="655.0" layoutY="46.0" mnemonicParsing="false" onAction="#addService" prefHeight="40.0" prefWidth="150.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Thêm dịch vụ " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER_RIGHT" layoutX="813.0" layoutY="46.0" mnemonicParsing="false" onAction="#delService" prefHeight="40.0" prefWidth="78.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Xóa " textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" layoutX="664.0" layoutY="71.0" size="15" />
+            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" layoutX="823.0" layoutY="71.0" size="15" />
+            <FontAwesomeIconView fill="#58b98d" glyphName="LIST_UL" layoutX="14.0" layoutY="61.0" size="31" />
+            <Button alignment="CENTER_RIGHT" layoutX="505.0" layoutY="45.0" mnemonicParsing="false" onAction="#updateService" prefHeight="40.0" prefWidth="142.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Sửa dịch vụ" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="COG" layoutX="519.0" layoutY="71.0" size="15" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AnchorPane2" layoutX="271.0" layoutY="173.0" prefHeight="514.0" prefWidth="906.0" stylesheets="@HomeDesigner.css" visible="false">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <TableView fx:id="table" layoutX="63.0" layoutY="35.0" prefHeight="235.0" prefWidth="804.0">
+              <columns>
+                <TableColumn fx:id="buildingNumberColumn" prefWidth="105.60000610351562" text="Mã tòa " />
+                <TableColumn fx:id="serviceNumberColumn" prefWidth="228.7999267578125" text="Mã Dịch Vụ " />
+                  <TableColumn fx:id="serviceNameColumn" prefWidth="236.800048828125" text="Tên dịch vụ " />
+                  <TableColumn fx:id="servicePriceColumn" prefWidth="230.39996337890625" text="Giá tiền " />
+              </columns>
+            </TableView>
+            <Label layoutX="53.0" layoutY="320.0" stylesheets="@HomeDesigner.css" text="Mã tòa ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="buildingNumberTextField" editable="false" layoutX="141.0" layoutY="313.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="53.0" layoutY="404.0" stylesheets="@HomeDesigner.css" text="Mã DV">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="serviceNumberTextField" layoutX="141.0" layoutY="397.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="453.0" layoutY="323.0" stylesheets="@HomeDesigner.css" text="Tên dịch vụ ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="serviceNameTextField" layoutX="570.0" layoutY="313.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Label layoutX="453.0" layoutY="404.0" stylesheets="@HomeDesigner.css" text="Giá tiền ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="servicePriceTextField" layoutX="570.0" layoutY="397.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+      <ChoiceBox fx:id="buildingNumberChoiceBox" layoutX="330.0" layoutY="146.0" prefWidth="150.0" />
+      <Label layoutX="270.0" layoutY="150.0" text="Chọn tòa:" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1205.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HomeController">
+   <children>
+      <AnchorPane fx:id="AnchorPane2" layoutX="242.0" layoutY="1.0" prefHeight="709.0" prefWidth="962.0" stylesheets="@application.css">
+         <children>
+            <BorderPane layoutX="-5.0" prefHeight="710.0" prefWidth="972.0" styleClass="white-bg" stylesheets="@HomeDesigner.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-4.600000000000023" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="22.0" layoutY="14.0" prefHeight="172.0" prefWidth="926.0" stylesheets="@HomeDesigner.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="41.0" layoutY="13.0" prefHeight="146.0" prefWidth="318.0" />
+                              <AnchorPane layoutX="29.0" layoutY="17.0" prefHeight="138.0" prefWidth="254.0" styleClass="nav-form" stylesheets="@HomeDesigner.css">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="31.0" layoutY="88.0" prefHeight="35.0" prefWidth="192.0" text="Phòng còn trống" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="availableRoomLabel" layoutX="195.0" layoutY="14.0" text="10" textFill="WHITE">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="KEY" layoutX="25.0" layoutY="73.0" size="50" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="330.0" layoutY="17.0" prefHeight="138.0" prefWidth="254.0" styleClass="nav-form" stylesheets="@HomeDesigner.css">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="41.0" layoutY="94.0" prefHeight="35.0" prefWidth="192.0" text="Tổng thu nhập" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priceSumLabel" layoutX="171.0" layoutY="24.0" text="2000" textFill="WHITE">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="14.0" layoutY="81.0" size="50" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="638.0" layoutY="17.0" prefHeight="138.0" prefWidth="254.0" styleClass="nav-form" stylesheets="@HomeDesigner.css">
+                                 <children>
+                                    <Label alignment="CENTER" layoutX="31.0" layoutY="88.0" prefHeight="35.0" prefWidth="192.0" text="Phòng đang thuê" textFill="WHITE">
+                                       <font>
+                                          <Font name="Arial" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="rentedRoomLabel" layoutX="215.0" layoutY="15.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font size="23.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="14.0" layoutY="75.0" size="50" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="510.0" prefWidth="874.0" styleClass="shadow" stylesheets="@HomeDesigner.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="21.0" layoutY="24.0" prefHeight="468.0" prefWidth="930.0" stylesheets="@HomeDesigner.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Button layoutX="673.0" layoutY="19.0" mnemonicParsing="false" onAction="#showAvailibleRoomList" prefHeight="42.0" prefWidth="164.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Danh sách phòng trống" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="487.0" layoutY="19.0" mnemonicParsing="false" onAction="#showRentedRoomList" prefHeight="42.0" prefWidth="164.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" text="Danh sách đã thuê" textFill="WHITE">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="874.0" layoutY="22.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="36.0" styleClass="nav-form" stylesheets="@HomeDesigner.css" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="885.0" layoutY="40.0" size="16" />
+                              <TableView fx:id="rentedRoomTable" layoutX="54.0" layoutY="90.0" prefHeight="350.0" prefWidth="818.0">
+                                <columns>
+                                  <TableColumn fx:id="roomNumberColumn" prefWidth="91.19998168945312" text="Mã phòng" />
+                                  <TableColumn fx:id="buildingNumberColumn" prefWidth="98.39997863769531" text="Mã tòa " />
+                                    <TableColumn fx:id="roomTypeColumn" prefWidth="244.79998779296875" text="Loại phòng " />
+                                    <TableColumn fx:id="roomPriceColumn" prefWidth="241.5999755859375" text="Giá phòng " />
+                                    <TableColumn fx:id="roomStateColumn" prefWidth="140.80010986328125" text="Trạng thái " />
+                                </columns>
+                              </TableView>
+                              <TableView fx:id="availibleRoomTable" layoutX="54.0" layoutY="90.0" prefHeight="350.0" prefWidth="818.0" visible="false">
+                                 <columns>
+                                    <TableColumn fx:id="roomNumberColumn1" prefWidth="91.19998168945312" text="Mã phòng" />
+                                    <TableColumn fx:id="buildingNumberColumn1" prefWidth="98.39997863769531" text="Mã tòa " />
+                                    <TableColumn fx:id="roomTypeColumn1" prefWidth="244.79998779296875" text="Loại phòng " />
+                                    <TableColumn fx:id="roomPriceColumn1" prefWidth="241.5999755859375" text="Giá phòng " />
+                                    <TableColumn fx:id="roomStateColumn1" prefWidth="140.80010986328125" text="Trạng thái " />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children></AnchorPane>
+      <AnchorPane fx:id="AnchorPane1" layoutY="2.0" prefHeight="709.0" prefWidth="242.0" styleClass="nav-form" stylesheets="@HomeDesigner.css">
+         <children>
+            <Button fx:id="dichVuButton" layoutY="383.0" mnemonicParsing="false" onAction="#showService" prefHeight="82.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Dịch Vụ" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button layoutX="-2.0" layoutY="221.0" mnemonicParsing="false" onAction="#showHome" prefHeight="82.0" prefWidth="175.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Home" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="ThemPhongButton" layoutY="302.0" mnemonicParsing="false" onAction="#showAddRoom" prefHeight="82.0" prefWidth="242.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Thêm Phòng" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="14.0" layoutY="273.0" size="30" text="" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS_CIRCLE" layoutX="15.0" layoutY="354.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="PHONE" layoutX="16.0" layoutY="435.0" size="30" />
+            <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="77.0" layoutY="100.0" size="100" wrappingWidth="78.39996337890625" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="114.0" prefHeight="42.0" prefWidth="242.0" text="Welcome to" textAlignment="CENTER" textFill="#47d9b5" wrapText="true">
+               <font>
+                  <Font name="Arial Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button layoutX="34.0" layoutY="663.0" mnemonicParsing="false" onAction="#logout" prefHeight="31.0" prefWidth="78.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Logout">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" layoutX="16.0" layoutY="690.0" size="30" />
+            <Label fx:id="usernameTextField" alignment="CENTER" layoutX="-2.0" layoutY="156.0" prefHeight="31.0" prefWidth="242.0" text="Username" textFill="#47d9b5">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="calculateButton" layoutY="465.0" mnemonicParsing="false" onAction="#showCalculate" prefHeight="82.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Tính tiền" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="MONEY" layoutX="11.0" layoutY="516.0" size="30" />
+            <Button fx:id="calculateButton1" layoutY="547.0" mnemonicParsing="false" onAction="#showStatistics" prefHeight="82.0" prefWidth="207.0" styleClass="nav-btn" stylesheets="@HomeDesigner.css" text="Thống kê" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView fill="WHITE" glyphName="LIST" layoutX="12.0" layoutY="598.0" size="30" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

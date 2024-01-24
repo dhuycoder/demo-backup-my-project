@@ -1,0 +1,14 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#AnchorPane1{
+	-fx-background-color:'lightgreen'
+}
+#HomeButton{
+	-fx-background-color:'burlywood'
+}
+#AnchorPane2{
+	-fx-background-color:'white';
+}
+#dichVuButton{
+	-fx-background-color:'burlywood'
+	
+}
